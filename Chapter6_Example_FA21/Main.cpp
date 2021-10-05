@@ -5,24 +5,20 @@ using namespace std;
 
 int main()
 {
-	ifstream inFile;
-	inFile.open("C:/Users/busch/OneDrive for Business/Classes/C++/Presentations/Ch6Examples/InputEOFExample.dat");
+	int i = 0, j = 0;
 
-	char data;
-
-	if (!inFile)
+	while (i < 20)
 	{
-		cout << "Can't find file!" << endl;
+		cout << i << endl;
 
-		return 1;
-	}
+		while (j < 10)
+		{
+			cout << "\t" << j << endl;
+			j++;
+		}
 
-	inFile >> data; // Priming read
-
-	while (inFile)
-	{
-		cout << data << endl;
-		inFile >> data;
+		i++;
+		j = 0;
 	}
 
 	return 0;
