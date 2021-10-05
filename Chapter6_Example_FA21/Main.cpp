@@ -1,28 +1,28 @@
 #include <iostream>
-#include <fstream>
 
 using namespace std;
 
 int main()
 {
-	char inChar;
-	ifstream inFile;
+	cout << "Calculate Fibonacci sequence to 5 digits.\n";
 
-	inFile.open("C:/Users/busch/OneDrive - Iowa Central Community College/Classes/FA17/C++/Presentations/Ch6Examples/SentinelInputData.dat");
+	bool test = true;
+	int n_1 = 1, n_2 = 1;
+	int n_3;
 
-	if (!inFile)
+	cout << n_1 << endl << n_2 << endl;
+
+	while (test)
 	{
-		cout << "File failed to open!\n";
-		return 1;
-	}
+		n_3 = n_1 + n_2;
+		cout << n_3 << endl;
 
-	inFile.get(inChar);
-	while (inChar != '\n')
-	{
-		cout << inChar << endl;
-		inFile.get(inChar);
+		n_1 = n_2;
+		n_2 = n_3;
+
+		if (n_2 >= 100000)
+			test = false;
 	}
-	cout << endl;
 
 	return 0;
 }
